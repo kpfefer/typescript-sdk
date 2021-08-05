@@ -38,9 +38,6 @@
   "lint-staged": {
     "*.{ts,md}": "yarn run prettier-format"
   },
-  "files": [
-    "/dist"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kpfefer/typescript-sdk.git"
