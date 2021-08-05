@@ -1,5 +1,5 @@
 {
-  "name": "@orca-so/sdk",
+  "name": "orcasdk",
   "version": "1.0.4",
   "description": "Typescript SDK for the Orca protocol.",
   "main": "dist/index.js",
