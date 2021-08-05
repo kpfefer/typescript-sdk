@@ -13,4 +13,5 @@ export enum OrcaPoolConfig {
   RAY_SOL = "RAY_SOL",
   ETH_SOL = "ETH_SOL",
   ETH_USDC = "ETH_USDC",
+  USDC_USDT = "USDC_USDT",
 }
