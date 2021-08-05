@@ -169,10 +169,30 @@ export const ethUsdcPool: OrcaPoolParams = Object.freeze({
   },
 });
 
+export const usdcUsdtPool: OrcaPoolParams =  Object.freeze({
+    address: new PublicKey("FX5UWkujjpU4yKB4yvKVEzG2Z8r2PLmLpyVmv12yqAUQ"),
+    nonce: 255,
+    authority: new PublicKey("Cjnz1EswFL22BmgrRSAnKxfXUah3G1YL6JtaoaLoBY8k"),
+    poolTokenMint: new PublicKey("33k9G5HeH5JFukXTVxx3EmZrqjhb19Ej2GC2kqVPCKnM"),
+    poolTokenDecimals: 9,
+    feeAccount: new PublicKey("GqtosegQU4ad7W9AMHAQuuAFnjBQZ4VB4eZuPFrz8ALr"),
+    tokenIds: [usdcToken.mint.toString(), usdtToken.mint.toString()],
+    tokens: {
+        [usdcToken.mint.toString()]:  {...usdcToken, addr: new PublicKey("EjUNm7Lzp6X8898JiCU28SbfQBfsYoWaViXUhCgizv82")},
+        [usdtToken.mint.toString()]:  {...usdtToken, addr: new PublicKey("C1ZrV56rf1wbDzcnHY6FpNaVmzT5D8WtyEKS1FAGrboe")},
+    },
+    curveType: CurveType.Stable,
+    feeStructure: {
+        traderFee: Percentage.fromFraction(1, 1000),
+        ownerFee: Percentage.fromFraction(0, 1000),
+    },
+});
+
 export const orcaPoolConfigs: Record<OrcaPoolConfig, OrcaPoolParams> = {
   [OrcaPoolConfig.SOL_USDC]: solUsdcPool,
   [OrcaPoolConfig.SOL_USDT]: solUsdtPool,
   [OrcaPoolConfig.RAY_SOL]: raySolPool,
   [OrcaPoolConfig.ETH_SOL]: ethSolPool,
   [OrcaPoolConfig.ETH_USDC]: ethUsdcPool,
+  [OrcaPoolConfig.USDC_USDT]: usdcUsdtPool,
 };
